@@ -15,13 +15,20 @@ import { backend } from 'declarations/backend';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3498db',
+      main: '#000000',
     },
     secondary: {
-      main: '#2c3e50',
+      main: '#ffffff',
     },
     error: {
-      main: '#e74c3c',
+      main: '#808080',
+    },
+    background: {
+      default: '#ffffff',
+    },
+    text: {
+      primary: '#000000',
+      secondary: '#808080',
     },
   },
 });
@@ -75,14 +82,12 @@ function App() {
       <CssBaseline />
       <Box
         sx={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1580983561371-7f4b242d8ec0?ixid=M3w2MzIxNTd8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjQ5NjgwNDl8&ixlib=rb-4.0.3")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundColor: '#f0f0f0',
           minHeight: '300px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: 'black',
           textAlign: 'center',
           mb: 4,
         }}
@@ -112,7 +117,7 @@ function App() {
           </Box>
         ) : (
           posts.map((post) => (
-            <Card key={Number(post.id)} sx={{ mb: 2 }}>
+            <Card key={Number(post.id)} sx={{ mb: 2, boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
               <CardContent>
                 <Typography variant="h5" component="h2" gutterBottom>
                   {post.title}
